@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Vue框架</title>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script src="" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul v-for="item in list">
+				<li>{{item}}</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vm=new Vue({
+			el:'#app',
+			data:{
+				list:['你是','我是','它是'],
+			}
+		})
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

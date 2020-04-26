@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>插槽</title>
+		<script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<hello>
+		    	<div id=>111111</div>
+		    	<h3>{{message}}</h3>
+		    	<div id=>111111</div>
+		    </hello>
+		</div>
+	</body>
+	<template id="box">
+		<div>   <!--模板里面要写空的div-->
+		    <h2>我是模板的开始</h2>
+		    <slot></slot> <!--插槽-->
+		    <h2>我是模板的结束</h2>
+		</div>
+	</template>
+	<script type="text/javascript">
+		let vm=new Vue({
+			el:'#app',
+			data:{},
+			components:{
+				'hello'{
+					template:'#box'
+				}
+			}
+		})
+	</script>
+</html>

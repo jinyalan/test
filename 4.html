@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拓展组件</title>
+		<script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+		    	<hello-world></hello-world>
+		    	<hello-world></hello-world>
+		    	<hello-world></hello-world>
+		    	<hello-world></hello-world>
+		    	<hello-world></hello-world>
+		    	<hello-world></hello-world>
+		    </div>
+		</div>
+	</body>
+	<script type="x-template" id="box">
+		<div>
+		    <h1 @click="change">标题:{{title}}</h1>
+		    <ul v-for="(item,index) in list" :key="item">
+		    	<li>{{item}}</li>
+		    </ul>
+		</div>
+	</script>
+	<script type="text/javascript">
+		let vm=new Vue({
+			el:'#app',
+			data:{
+				seen:false,
+				message:"武汉加油",
+			},
+			components:{
+				'HelloWorld'{
+					template:'#box',
+					data:(){
+						return{
+							title:"大家好！",
+							list:['你是','我是','它是'],
+						}
+					},
+					methods:{
+						change(){
+							this.title="你好，会宁"
+						}
+					}
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模板和组件</title>
+		<script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<hello>   <!--组件-->
+		    	<div slot="one">替换第一个slot</div>
+		    	<div slot="two">替换第二个slot</div>  <!--把组件里的内容用模板替换-->
+		    	<div slot="three">替换第三个slot</div>
+		    </hello>
+		</div>
+	</body>
+	<!--<template id="box">
+		<div>
+		    <h2>我是模板的开始</h2>-->
+		    <!--<slot></slot>--> <!--插槽-->
+		    <!--<h2>我是模板的结束</h2>
+		</div>
+	</template>-->
+	<script type="text/javascript">
+	    Vue.component('hello',{   // 模板
+	    	template:`
+	    	<div>
+	    	    <span>首页</span>
+	    	    <slot name="one"><h3>我是老大</h3></slot>
+	    	    <slot name="two"><h3>我是老二</h3></slot>
+	    	    <slot name="three"><h3>我是老三</h3></slot>
+	    	</div>
+	    	`
+	    })
+	    new Vue({
+	    	el:"#app",
+	    })
+	
+	
+//		let vm=new Vue({
+//			el:'#app',
+//			data:{},
+//			components:{
+//				'hello'{
+//					template:'#box'
+//				}
+//			}
+//		})
+	</script>
+</html>

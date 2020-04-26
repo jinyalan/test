@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全局组件</title>
+		<script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div>
+		    	<web></web>
+		    </div>
+		</div>
+		<div id="box1">
+			<div>
+		    	<web></web>
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		Vue.component('web',{
+			template:`
+				<div>
+					<h2>世界, 你好</h2>
+				</div>`,
+			data(){
+				return{
+					msg:"哈哈哈"
+				}
+			}
+		})
+		new Vue({
+	    	el:"#box",
+	    })
+		new Vue({
+	    	el:"#box1",
+	    })
+	</script>
+</html>
